@@ -7,7 +7,7 @@ export const getPaciente:RequestHandler = async(req, res)=>{
         const pacientes = await Pacientes.findAll()
 
         res.status(200).json({
-            message: 'Operacion exitosa',
+            message: 'Operacion exitosa al traer los pacientes',
             data: pacientes
         })
     } catch (error) {
@@ -99,7 +99,7 @@ export const deletePaciente:RequestHandler = async(req,res)=>{
         }
     } catch (error:any) {
         res.status(500).json({
-            message: 'Paciente no fue elimnado',
+            message: 'Paciente no fue eliminado',
             error: error.message
         })
     }

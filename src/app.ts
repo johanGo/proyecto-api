@@ -5,6 +5,8 @@ import { urlencoded, json } from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import pacienteRoutes from './routes/pacientes-routes';
+import doctoresRoutes from './routes/doctores-routes'
+import citasRoutes from './routes/citas-routes'
 dotenv.config();
 
 const app = express()
@@ -18,7 +20,8 @@ app.get('/', (req: Request, res: Response)=>{
 })
 
 app.use('/api/pacientes', pacienteRoutes)
-// app.use('/')
+app.use('/api/doctores', doctoresRoutes)
+app.use('/api/citas',citasRoutes )
 
 //error de rutas
 app.use((req: Request, res: Response)=>{
